@@ -1,0 +1,113 @@
+:root {
+  --button-width: 200px;
+  --button-height: 130px;
+  --button-top-width: 160px;
+  --button-top-height: 60px;
+  --button-top-margin: 30px;
+  --button-bottom-width: 200px;
+  --button-bottom-height: 80px;
+  --button-font-size: 38px;
+}
+
+:root {
+  --font-size: 1.6rem;
+  --font-weight: 700;
+  --line-height: 1.5;
+  --color: #212529;
+  --border-radius: 0.5rem;
+  --letter-spacing: 0.1em;
+  --padding-start: 1rem;
+  --padding-end: 4rem;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  position: relative;
+  display: inline-block;
+  padding: var(--padding-start) var(--padding-end);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: var(--letter-spacing);
+  color: var(--color);
+  border-radius: var(--border-radius);
+}
+
+a.btn-emergency {
+  position: relative;
+  display: block;
+  width: var(--button-width);
+  height: var(--button-height);
+  margin: 0 auto;
+}
+
+a.btn-emergency:hover .btn-emergency-top {
+  top: 10px;
+  height: 50px;
+}
+
+a.btn-emergency:active .btn-emergency-top {
+  top: 20px;
+  height: 40px;
+}
+
+.btn-emergency-top {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: var(--button-top-width);
+  height: var(--button-top-height);
+  margin-top: var(--button-top-margin);
+  transition: all 0.3s;
+  border-radius: 0 0 50% 50%;
+  background: #d62d2d;
+}
+
+.btn-emergency-top:before {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: var(--button-top-width);
+  height: var(--button-top-height);
+  content: "";
+  border-radius: var(--button-top-height) / var(--button-top-margin);
+  background: #ed4c4c;
+}
+
+.btn-emergency-top span {
+  font-size: var(--button-font-size);
+  font-weight: bold;
+  position: absolute;
+  top: -24px;
+  left: 0;
+  width: 100%;
+  transform: scaleY(0.75);
+  text-align: center;
+  color: #f6a3a3;
+}
+
+.btn-emergency-bottom {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: var(--button-bottom-width);
+  height: var(--button-bottom-height);
+  border-radius: 100px / 40px;
+  background: #d8e4ea;
+  box-shadow: 0 8px 0 #c4cacc;
+}
