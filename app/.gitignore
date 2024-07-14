@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # else
-key.json
+src/app/key.json

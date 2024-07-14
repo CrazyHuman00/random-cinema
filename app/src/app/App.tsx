@@ -1,21 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import { fetchAPI } from './Api';
 
 function App() {
+    const [movie, setMovie] = useState<{ title: string; poster_path: string } | null>(null);
     const [message, setMessage] = useState<string | null>(null);
 
-    useEffect(() => {
-        fetchAPI().then(r => console.log(r))
-    }, [])
-
+    // ボタンを押した時の処理
     const handleClick = () => {
-        setMessage('ボタンが押されました！');
+        fetchAPI().then(movie => {
+            if (movie) {
+                setMovie(movie);
+            } else {
+                setMessage('映画の取得に失敗しました。');
+            }
+        });
     };
 
     return (
         <div className="App">
-
             <a className="App-header">
                 <h1>Movie</h1>
             </a>
@@ -24,6 +27,15 @@ function App() {
                 <span className="btn-emergency-top"><span>ガチャ</span></span>
             </a>
             {message && <p>{message}</p>}
+            {movie && (
+                <div className="movie">
+                    <h2>{movie.title}</h2>
+                    <img
+                        src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${movie.poster_path}`}
+                        alt={movie.title}
+                    />
+                </div>
+            )}
         </div>
 
     );
