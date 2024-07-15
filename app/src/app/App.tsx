@@ -20,7 +20,7 @@ function App() {
     return (
         <div className="App">
             <a className="App-header">
-                <h1>Movie</h1>
+                <h1>MOVIE GACHA</h1>
             </a>
             <a className="btn-emergency" onClick={handleClick}>
                 <span className="btn-emergency-bottom"></span>
@@ -29,6 +29,7 @@ function App() {
             {message && <p>{message}</p>}
             {movie && (
                 <div className="movie">
+                    <h3>今日見る映画は...</h3>
                     <h2>{movie.title}</h2>
                     <img
                         src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${movie.poster_path}`}

@@ -2,7 +2,7 @@
 ## 概要
 ランダムで映画を選んでくれるアプリです。\
 以下のリンクを踏んでアクセスしてください。\
-https://random-cinema.netlify.app/
+https://movie-gacha.netlify.app/
 
 ## 使い方
 画面上部のガチャボタンをクリックすると、ランダムで映画が選ばれます。\

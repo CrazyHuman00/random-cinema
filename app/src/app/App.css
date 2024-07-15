@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
 :root {
   --button-width: 200px;
   --button-height: 130px;
@@ -27,7 +29,7 @@
 
 .App-header {
   text-align: center;
-
+  font-family: 'Amatic SC', cursive;
 }
 
 .btn,
